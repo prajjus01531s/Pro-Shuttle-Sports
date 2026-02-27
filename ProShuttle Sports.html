@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pro Shuttle Sports</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#f4f6f9;}
+header{background:#0d47a1;color:white;padding:20px;text-align:center;}
+header h1{margin:0;}
+.quote{font-style:italic;margin-top:5px;}
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:220px;
+height:100%;
+background:#1565c0;
+padding-top:20px;
+color:white;
+}
+
+.sidebar h3{
+text-align:center;
+}
+
+.sidebar select{
+width:90%;
+margin:20px auto;
+display:block;
+padding:8px;
+}
+
+.main{
+margin-left:230px;
+padding:20px;
+}
+
+.products{
+display:none;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.product{
+background:white;
+width:260px;
+padding:15px;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.product img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:6px;
+}
+
+.product button{
+margin:5px;
+padding:8px;
+border:none;
+background:#1976d2;
+color:white;
+cursor:pointer;
+}
+
+.product button:hover{background:#0d47a1;}
+
+#cart{
+background:white;
+padding:15px;
+margin-top:20px;
+border-radius:8px;
+}
+
+#buyNow{
+background:green;
+color:white;
+padding:10px;
+border:none;
+cursor:pointer;
+margin-top:10px;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:white;
+padding:20px;
+border-radius:8px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Pro Shuttle Sports</h1>
+<p class="quote">"Champions are made when no one is watching."</p>
+<p class="quote">Power. Precision. Passion for Badminton.</p>
+</header>
+
+<div class="sidebar">
+<h3>Categories</h3>
+<select onchange="showCategory(this.value)">
+<option value="">Select Category</option>
+<option value="rackets">Rackets</option>
+<option value="shuttles">Shuttlecocks</option>
+<option value="combos">Combos</option>
+</select>
+
+<h3>About Us</h3>
+<p style="padding:10px;font-size:14px;">
+Pro Shuttle Sports is dedicated to delivering premium badminton equipment for beginners and professionals. 
+We believe badminton is not just a sport — it is discipline, speed, and strategy combined.
+Every product we offer is selected for durability, balance, and high performance.
+</p>
+</div>
+
+<div class="main">
+
+<h2>Welcome to Pro Shuttle Sports</h2>
+<p>At Pro Shuttle Sports, we provide world-class rackets, shuttlecocks, and performance combos designed to elevate your game. Whether you are smashing on court or training daily, our equipment supports your ambition.</p>
+
+<h2 id="sectionTitle"></h2>
+
+<div id="rackets" class="products">
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\yonex.png" alt="Yonex PowerDrive 77">
+<h3>Yonex PowerDrive 77</h3>
+<p>₹4,500</p>
+<p>High modulus graphite frame, head-heavy balance, explosive smash control.</p>
+<button onclick="addToCart('Yonex PowerDrive 77',4500)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\li ning.webp" alt="Li-Ning Turbo X 90">
+<h3>Li-Ning Turbo X 90</h3>
+<p>₹3,900</p>
+<p>Aerodynamic frame, fast swing speed, enhanced stability.</p>
+<button onclick="addToCart('Li-Ning Turbo X 90',3900)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\victor.jpeg" alt="Victor AeroSpeed 500">
+<h3>Victor AeroSpeed 500</h3>
+<p>₹3,200</p>
+<p>Lightweight carbon fiber build, precision control for rallies.</p>
+<button onclick="addToCart('Victor AeroSpeed 500',3200)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\carlton.jpeg" alt="Carlton SmashPro Elite">
+<h3>Carlton SmashPro Elite</h3>
+<p>₹2,800</p>
+<p>Balanced design, durable strings, ideal for intermediate players.</p>
+<button onclick="addToCart('Carlton SmashPro Elite',2800)">Add to Cart</button>
+</div>
+
+</div>
+
+<div id="shuttles" class="products">
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\yonex.jpeg" alt="Yonex Mavis 350 Nylon">
+<h3>Yonex Mavis 350 Nylon</h3>
+<p>₹900</p>
+<p>Long-lasting nylon shuttle with stable flight trajectory.</p>
+<button onclick="addToCart('Yonex Mavis 350 Nylon',900)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\li ning.jpeg" alt="Li-Ning Champ Feather">
+<h3>Li-Ning Champ Feather</h3>
+<p>₹1,300</p>
+<p>Premium goose feather shuttle for tournament play.</p>
+<button onclick="addToCart('Li-Ning Champ Feather',1300)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\pro shuttlecock.jpeg" alt="ProShuttle Club Nylon">
+<h3>ProShuttle Club Nylon</h3>
+<p>₹650</p>
+<p>Durable training shuttle, consistent performance.</p>
+<button onclick="addToCart('ProShuttle Club Nylon',650)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\victor.webp" alt="Victor Gold Feather">
+<h3>Victor Gold Feather</h3>
+<p>₹1,500</p>
+<p>Tournament-grade feather shuttle, superior stability.</p>
+<button onclick="addToCart('Victor Gold Feather',1500)">Add to Cart</button>
+</div>
+
+</div>
+
+<div id="combos" class="products">
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\1.jpeg" alt="Starter Kit Combo - 2 Rackets + Shuttles + Bag">
+<h3>Starter Kit Combo</h3>
+<p>₹5,000</p>
+<p>2 Rackets + Shuttles + Bag for beginners.</p>
+<button onclick="addToCart('Starter Kit Combo',5000)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\2.jpeg" alt="Stringing Combo - Racket + Free Stringing Service">
+<h3>Stringing Combo</h3>
+<p>₹3,700</p>
+<p>Racket + Free professional stringing service.</p>
+<button onclick="addToCart('Stringing Combo',3700)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\3.jpeg" alt="Practice Pack - Racket + Nylon Shuttles">
+<h3>Practice Pack</h3>
+<p>₹3,200</p>
+<p>Racket + Nylon shuttles for training sessions.</p>
+<button onclick="addToCart('Practice Pack',3200)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="c:\Users\prajw\Downloads\4.jpeg" alt="Pro Player Combo - Premium Racket + Feather Shuttles + Accessories">
+<h3>Pro Player Combo</h3>
+<p>₹6,800</p>
+<p>Premium racket + feather shuttles + accessories.</p>
+<button onclick="addToCart('Pro Player Combo',6800)">Add to Cart</button>
+</div>
+
+</div>
+
+<div id="cart">
+<h2>Your Cart</h2>
+<div id="cartItems">Cart is empty</div>
+<button id="buyNow" onclick="buyNow()">Buy Now</button>
+</div>
+
+</div>
+
+<div class="modal" id="orderModal">
+<div class="modal-content">
+<h3>Order Placed Successfully!</h3>
+<p>Thank you for trusting Pro Shuttle Sports. Keep smashing!</p>
+<button onclick="closeModal()">Close</button>
+</div>
+</div>
+
+<script>
+let cart=[];
+
+function showCategory(category){
+document.querySelectorAll('.products').forEach(p=>p.style.display='none');
+if(category) document.getElementById(category).style.display='flex';
+}
+
+function addToCart(name,price){
+cart.push({name,price});
+updateCart();
+}
+
+function updateCart(){
+let display=document.getElementById('cartItems');
+if(cart.length===0){
+display.innerHTML="Cart is empty";
+return;
+}
+let total=0;
+display.innerHTML="";
+cart.forEach(item=>{
+total+=item.price;
+display.innerHTML+=item.name+" - ₹"+item.price+"<br>";
+});
+display.innerHTML+="<br>Total: ₹"+total;
+}
+
+function buyNow(){
+if(cart.length===0){alert("Cart is empty");return;}
+document.getElementById("orderModal").style.display="flex";
+cart=[];
+updateCart();
+}
+
+function closeModal(){
+document.getElementById("orderModal").style.display="none";
+}
+</script>
+
+</body>
+</html>
